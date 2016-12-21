@@ -1,0 +1,49 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "Angular example advanced tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "typings install --proxy=http://proxy-surf:8080",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilvanWork/angular-example.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Silvan Aebersold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SilvanWork/angular-example/issues"
+  },
+  "homepage": "https://github.com/SilvanWork/angular-example#readme",
+  "dependencies": {
+    "@angular/common": "^2.2.3",
+    "@angular/compiler": "^2.2.3",
+    "@angular/core": "^2.2.3",
+    "@angular/forms": "^2.4.0",
+    "@angular/http": "^2.2.3",
+    "@angular/platform-browser": "^2.2.3",
+    "@angular/platform-browser-dynamic": "^2.2.3",
+    "@angular/router": "^3.2.3",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-rc.4",
+    "systemjs": "^0.19.41",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.10",
+    "typings": "^2.0.0"
+  }
+}
