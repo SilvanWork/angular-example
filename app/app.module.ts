@@ -1,33 +1,27 @@
 /**
  * Created by hkh5f on 21.12.2016.
  */
-import {BrowserModule} from "@angular/platform-browser";
-import {AppComponent} from "./app.component";
-import {NgModule} from "@angular/core";
-import {HighlightDirective} from "./highlight.directive";
-import {TitleComponent} from "./title.component";
-import {UserService} from "./user.service";
-import {FormsModule} from "@angular/forms";
-import {AwesomePipe} from "./contact/awesome.pipe";
-import {ContactComponent} from "./contact/contact.component";
-import {
-    HighlightDirective as ContactHighlightDirective
-} from './contact/highlight.directive';
-import {ContactService} from "./contact/contact.service";
+import { NgModule }           from '@angular/core';
+import { BrowserModule }      from '@angular/platform-browser';
+
+/* App Root */
+import { AppComponent }       from './app.component';
+
+/* Feature Modules */
+import { ContactModule }      from './contact/contact.module';
+import { CoreModule }         from './core/core.module';
+
+/* Routing Module */
+import { AppRoutingModule }   from './app-routing.module';
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule ],
-    declarations: [
-        AppComponent,
-        HighlightDirective,
-        TitleComponent,
-
-        AwesomePipe,
-        ContactComponent,
-        ContactHighlightDirective
+    imports:      [
+        BrowserModule,
+        ContactModule,
+        CoreModule.forRoot({userName: 'Miss Marple'}),
+        AppRoutingModule
     ],
-    bootstrap:    [ AppComponent ],
-    providers: [ UserService, ContactService ]
+    declarations: [ AppComponent ],
+    bootstrap:    [ AppComponent ]
 })
-
 export class AppModule { }
